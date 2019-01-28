@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tab
- * Date: 19-1-24
- * Time: 下午4:20
- */
 namespace Tab\Weather\Tests;
 
 use GuzzleHttp\Client;
@@ -136,5 +130,4 @@ class WeatherTest extends TestCase
         // 断言正确传参并返回
         $this->assertSame(['success' => true], $w->getForecastsWeather('深圳'));
     }
-
 }

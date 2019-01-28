@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tab
- * Date: 19-1-24
- * Time: 下午3:40
- */
-
 namespace Tab\Weather;
 
 use GuzzleHttp\Client;
@@ -15,6 +8,7 @@ use Tab\Weather\Exceptions\InvalidArgumentException;
 class Weather
 {
     protected $key;
+
     protected $guzzleOptions = [];
 
     public function __construct($key)
@@ -48,6 +42,7 @@ class Weather
             'key' => $this->key,
             'city' => $city,
             'output' => \strtolower($format),
+
             'extensions' =>  \strtolower($type),
         ]);
 
