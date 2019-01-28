@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tab
- * Date: 19-1-24
- * Time: 下午3:40
+
+/*
+ * This file is part of the tab/weather.
+ *
+ * (c) tab<791022012@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Tab\Weather;
@@ -15,6 +18,7 @@ use Tab\Weather\Exceptions\InvalidArgumentException;
 class Weather
 {
     protected $key;
+
     protected $guzzleOptions = [];
 
     public function __construct($key)
@@ -48,7 +52,7 @@ class Weather
             'key' => $this->key,
             'city' => $city,
             'output' => \strtolower($format),
-            'extensions' =>  \strtolower($type),
+            'extensions' => \strtolower($type),
         ]);
 
         try {
@@ -71,6 +75,4 @@ class Weather
     {
         return $this->getWeather($city, 'all', $format);
     }
-
-
 }
